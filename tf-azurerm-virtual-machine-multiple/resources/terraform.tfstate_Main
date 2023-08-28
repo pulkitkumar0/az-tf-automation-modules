@@ -1,0 +1,607 @@
+{
+  "version": 4,
+  "terraform_version": "1.1.4",
+  "serial": 90,
+  "lineage": "03e45c49-4655-c81b-2cbc-da6d1d47b485",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_availability_set",
+      "name": "avset",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Compute/availabilitySets/avset",
+            "location": "eastus",
+            "managed": true,
+            "name": "avset",
+            "platform_fault_domain_count": 2,
+            "platform_update_domain_count": 2,
+            "proximity_placement_group_id": null,
+            "resource_group_name": "pulkit-azure-rg",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.pulkit-azure"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_lb",
+      "name": "pulkit-azure",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "frontend_ip_configuration": [
+              {
+                "availability_zone": "No-Zone",
+                "gateway_load_balancer_frontend_ip_configuration_id": "",
+                "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/loadBalancers/loadBalancer/frontendIPConfigurations/publicIPAddress",
+                "inbound_nat_rules": [],
+                "load_balancer_rules": [],
+                "name": "publicIPAddress",
+                "outbound_rules": [],
+                "private_ip_address": "",
+                "private_ip_address_allocation": "Dynamic",
+                "private_ip_address_version": "",
+                "public_ip_address_id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/publicIPAddresses/publicIPForLB",
+                "public_ip_prefix_id": "",
+                "subnet_id": "",
+                "zones": []
+              }
+            ],
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/loadBalancers/loadBalancer",
+            "location": "eastus",
+            "name": "loadBalancer",
+            "private_ip_address": "",
+            "private_ip_addresses": [],
+            "resource_group_name": "pulkit-azure-rg",
+            "sku": "Basic",
+            "sku_tier": "Regional",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_public_ip.pulkit-azure",
+            "azurerm_resource_group.pulkit-azure"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_lb_backend_address_pool",
+      "name": "pulkit-azure",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend_address": [],
+            "backend_ip_configurations": [],
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/loadBalancers/loadBalancer/backendAddressPools/BackEndAddressPool",
+            "load_balancing_rules": [],
+            "loadbalancer_id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/loadBalancers/loadBalancer",
+            "name": "BackEndAddressPool",
+            "outbound_rules": [],
+            "resource_group_name": "pulkit-azure-rg",
+            "timeouts": null,
+            "tunnel_interface": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_lb.pulkit-azure",
+            "azurerm_public_ip.pulkit-azure",
+            "azurerm_resource_group.pulkit-azure"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "pulkit-azure",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "additional_capabilities": [],
+            "admin_password": null,
+            "admin_ssh_key": [
+              {
+                "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDD81KK9l/8p8eWa1fgfH1o1NlIWkyXZQusb9V8I+lHSmC0JE3L7nOpMJQEH8B3R/69HVADJ5W+Eu6K58RQ4NxRzSi0qZfv3JEAlLSEJIxMk5iTFvZBY9OJnNVQAw8XJYDvNeoGxlgR7p5DcYgJ50WV3VFfBKt8O8XRDG1KRgkUE3Pi2HKtmsyb0ddaqTHUMumMQYswRkYp9g2KFoLWnjLidiQk6wbb+SKj0BAjeodDbjCEWpKKuluYmo3VObGunP9c4Akolhj+pCPc4KXrx3XeFgZFlYWKMD2Kmz3xWAV7S0xIypkKF4yWrTxwLoEKITpHZC0XLvgmDY4Alc+ijqcXPGIh0LwA/Cbvsuc3f3izODZS1x+0IQoT1jM8cZlphzyJbR18GhvTf6i44aavYB9S4GoeFXvKcQRSP4nZ3PKPtWeS/fegtenX7ZaARAduhvKW5D/lX0Sn/6cdugQANhkvCgX3iP85fuXegCEgamPhkmX3hd7b5M2K4mGBZ+Qn/RkDKZdKVQLYU6cqN1kUQa4jICRJpwP1VrzVrqc9fhhGf0Y3CrL0kSvIOu13W5bNE0HiulzV2WLAXikSserPLQVwod3T3S9PFj+AhTVosT+L0uDxxxFSby97qZbDMk/xjge6ykDff1wLCu+E1YbjXTiMwx61YyOqhM+1IH//nDZweQ== pulkit_k@hcl.com\r\n",
+                "username": "adminuser"
+              }
+            ],
+            "admin_username": "adminuser",
+            "allow_extension_operations": true,
+            "availability_set_id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Compute/availabilitySets/AVSET",
+            "boot_diagnostics": [],
+            "computer_name": "acctvm0",
+            "custom_data": null,
+            "dedicated_host_id": "",
+            "disable_password_authentication": true,
+            "encryption_at_host_enabled": false,
+            "eviction_policy": "",
+            "extensions_time_budget": "PT1H30M",
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Compute/virtualMachines/acctvm0",
+            "identity": [],
+            "license_type": "",
+            "location": "eastus",
+            "max_bid_price": -1,
+            "name": "acctvm0",
+            "network_interface_ids": [
+              "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/networkInterfaces/acctni0"
+            ],
+            "os_disk": [
+              {
+                "caching": "ReadWrite",
+                "diff_disk_settings": [],
+                "disk_encryption_set_id": "",
+                "disk_size_gb": 30,
+                "name": "acctvm0_OsDisk_1_7efe3991378b4d0396082b155de7c16d",
+                "storage_account_type": "Standard_LRS",
+                "write_accelerator_enabled": false
+              }
+            ],
+            "patch_mode": "ImageDefault",
+            "plan": [],
+            "platform_fault_domain": -1,
+            "priority": "Regular",
+            "private_ip_address": "10.0.2.4",
+            "private_ip_addresses": [
+              "10.0.2.4"
+            ],
+            "provision_vm_agent": true,
+            "proximity_placement_group_id": "",
+            "public_ip_address": "",
+            "public_ip_addresses": [],
+            "resource_group_name": "pulkit-azure-rg",
+            "secret": [],
+            "secure_boot_enabled": false,
+            "size": "Standard_DS1_v2",
+            "source_image_id": "",
+            "source_image_reference": [
+              {
+                "offer": "UbuntuServer",
+                "publisher": "Canonical",
+                "sku": "16.04-LTS",
+                "version": "latest"
+              }
+            ],
+            "tags": null,
+            "timeouts": null,
+            "user_data": "",
+            "virtual_machine_id": "08ee6aa5-5a43-447d-adb5-b14e3ef99b79",
+            "virtual_machine_scale_set_id": "",
+            "vtpm_enabled": false,
+            "zone": ""
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNzAwMDAwMDAwMDAwLCJkZWxldGUiOjI3MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoyNzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_availability_set.avset",
+            "azurerm_network_interface.pulkit-azure",
+            "azurerm_resource_group.pulkit-azure"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "additional_capabilities": [],
+            "admin_password": null,
+            "admin_ssh_key": [
+              {
+                "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDD81KK9l/8p8eWa1fgfH1o1NlIWkyXZQusb9V8I+lHSmC0JE3L7nOpMJQEH8B3R/69HVADJ5W+Eu6K58RQ4NxRzSi0qZfv3JEAlLSEJIxMk5iTFvZBY9OJnNVQAw8XJYDvNeoGxlgR7p5DcYgJ50WV3VFfBKt8O8XRDG1KRgkUE3Pi2HKtmsyb0ddaqTHUMumMQYswRkYp9g2KFoLWnjLidiQk6wbb+SKj0BAjeodDbjCEWpKKuluYmo3VObGunP9c4Akolhj+pCPc4KXrx3XeFgZFlYWKMD2Kmz3xWAV7S0xIypkKF4yWrTxwLoEKITpHZC0XLvgmDY4Alc+ijqcXPGIh0LwA/Cbvsuc3f3izODZS1x+0IQoT1jM8cZlphzyJbR18GhvTf6i44aavYB9S4GoeFXvKcQRSP4nZ3PKPtWeS/fegtenX7ZaARAduhvKW5D/lX0Sn/6cdugQANhkvCgX3iP85fuXegCEgamPhkmX3hd7b5M2K4mGBZ+Qn/RkDKZdKVQLYU6cqN1kUQa4jICRJpwP1VrzVrqc9fhhGf0Y3CrL0kSvIOu13W5bNE0HiulzV2WLAXikSserPLQVwod3T3S9PFj+AhTVosT+L0uDxxxFSby97qZbDMk/xjge6ykDff1wLCu+E1YbjXTiMwx61YyOqhM+1IH//nDZweQ== pulkit_k@hcl.com\r\n",
+                "username": "adminuser"
+              }
+            ],
+            "admin_username": "adminuser",
+            "allow_extension_operations": true,
+            "availability_set_id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Compute/availabilitySets/AVSET",
+            "boot_diagnostics": [],
+            "computer_name": "acctvm1",
+            "custom_data": null,
+            "dedicated_host_id": "",
+            "disable_password_authentication": true,
+            "encryption_at_host_enabled": false,
+            "eviction_policy": "",
+            "extensions_time_budget": "PT1H30M",
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Compute/virtualMachines/acctvm1",
+            "identity": [],
+            "license_type": "",
+            "location": "eastus",
+            "max_bid_price": -1,
+            "name": "acctvm1",
+            "network_interface_ids": [
+              "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/networkInterfaces/acctni1"
+            ],
+            "os_disk": [
+              {
+                "caching": "ReadWrite",
+                "diff_disk_settings": [],
+                "disk_encryption_set_id": "",
+                "disk_size_gb": 30,
+                "name": "acctvm1_OsDisk_1_c80aa3d1480e40c2b16f076a8c01fec1",
+                "storage_account_type": "Standard_LRS",
+                "write_accelerator_enabled": false
+              }
+            ],
+            "patch_mode": "ImageDefault",
+            "plan": [],
+            "platform_fault_domain": -1,
+            "priority": "Regular",
+            "private_ip_address": "10.0.2.5",
+            "private_ip_addresses": [
+              "10.0.2.5"
+            ],
+            "provision_vm_agent": true,
+            "proximity_placement_group_id": "",
+            "public_ip_address": "",
+            "public_ip_addresses": [],
+            "resource_group_name": "pulkit-azure-rg",
+            "secret": [],
+            "secure_boot_enabled": false,
+            "size": "Standard_DS1_v2",
+            "source_image_id": "",
+            "source_image_reference": [
+              {
+                "offer": "UbuntuServer",
+                "publisher": "Canonical",
+                "sku": "16.04-LTS",
+                "version": "latest"
+              }
+            ],
+            "tags": null,
+            "timeouts": null,
+            "user_data": "",
+            "virtual_machine_id": "6ff5cc5b-3aef-449d-9a93-0a4f2f8180b8",
+            "virtual_machine_scale_set_id": "",
+            "vtpm_enabled": false,
+            "zone": ""
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNzAwMDAwMDAwMDAwLCJkZWxldGUiOjI3MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoyNzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_availability_set.avset",
+            "azurerm_network_interface.pulkit-azure",
+            "azurerm_resource_group.pulkit-azure"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_managed_disk",
+      "name": "pulkit-azure",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "create_option": "Empty",
+            "disk_access_id": "",
+            "disk_encryption_set_id": "",
+            "disk_iops_read_only": 0,
+            "disk_iops_read_write": 500,
+            "disk_mbps_read_only": 0,
+            "disk_mbps_read_write": 60,
+            "disk_size_gb": 1023,
+            "encryption_settings": [],
+            "gallery_image_reference_id": "",
+            "hyper_v_generation": "",
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Compute/disks/datadisk_existing_0",
+            "image_reference_id": "",
+            "location": "eastus",
+            "logical_sector_size": null,
+            "max_shares": 0,
+            "name": "datadisk_existing_0",
+            "network_access_policy": null,
+            "on_demand_bursting_enabled": false,
+            "os_type": "",
+            "public_network_access_enabled": true,
+            "resource_group_name": "pulkit-azure-rg",
+            "source_resource_id": "",
+            "source_uri": "",
+            "storage_account_id": "",
+            "storage_account_type": "Standard_LRS",
+            "tags": {},
+            "tier": "",
+            "timeouts": null,
+            "trusted_launch_enabled": false,
+            "zones": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.pulkit-azure"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "create_option": "Empty",
+            "disk_access_id": "",
+            "disk_encryption_set_id": "",
+            "disk_iops_read_only": 0,
+            "disk_iops_read_write": 500,
+            "disk_mbps_read_only": 0,
+            "disk_mbps_read_write": 60,
+            "disk_size_gb": 1023,
+            "encryption_settings": [],
+            "gallery_image_reference_id": "",
+            "hyper_v_generation": "",
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Compute/disks/datadisk_existing_1",
+            "image_reference_id": "",
+            "location": "eastus",
+            "logical_sector_size": null,
+            "max_shares": 0,
+            "name": "datadisk_existing_1",
+            "network_access_policy": null,
+            "on_demand_bursting_enabled": false,
+            "os_type": "",
+            "public_network_access_enabled": true,
+            "resource_group_name": "pulkit-azure-rg",
+            "source_resource_id": "",
+            "source_uri": "",
+            "storage_account_id": "",
+            "storage_account_type": "Standard_LRS",
+            "tags": {},
+            "tier": "",
+            "timeouts": null,
+            "trusted_launch_enabled": false,
+            "zones": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.pulkit-azure"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_interface",
+      "name": "pulkit-azure",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "applied_dns_servers": [],
+            "dns_servers": [],
+            "enable_accelerated_networking": false,
+            "enable_ip_forwarding": false,
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/networkInterfaces/acctni0",
+            "internal_dns_name_label": "",
+            "internal_domain_name_suffix": "hoiqql25tuxu1ocbv2qbm3pomd.bx.internal.cloudapp.net",
+            "ip_configuration": [
+              {
+                "gateway_load_balancer_frontend_ip_configuration_id": "",
+                "name": "pulkit-azureConfiguration",
+                "primary": true,
+                "private_ip_address": "10.0.2.4",
+                "private_ip_address_allocation": "Dynamic",
+                "private_ip_address_version": "IPv4",
+                "public_ip_address_id": "",
+                "subnet_id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/virtualNetworks/acctvn/subnets/acctsub"
+              }
+            ],
+            "location": "eastus",
+            "mac_address": "",
+            "name": "acctni0",
+            "private_ip_address": "10.0.2.4",
+            "private_ip_addresses": [
+              "10.0.2.4"
+            ],
+            "resource_group_name": "pulkit-azure-rg",
+            "tags": {},
+            "timeouts": null,
+            "virtual_machine_id": ""
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.pulkit-azure",
+            "azurerm_subnet.pulkit-azure",
+            "azurerm_virtual_network.pulkit-azure"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "applied_dns_servers": [],
+            "dns_servers": [],
+            "enable_accelerated_networking": false,
+            "enable_ip_forwarding": false,
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/networkInterfaces/acctni1",
+            "internal_dns_name_label": "",
+            "internal_domain_name_suffix": "hoiqql25tuxu1ocbv2qbm3pomd.bx.internal.cloudapp.net",
+            "ip_configuration": [
+              {
+                "gateway_load_balancer_frontend_ip_configuration_id": "",
+                "name": "pulkit-azureConfiguration",
+                "primary": true,
+                "private_ip_address": "10.0.2.5",
+                "private_ip_address_allocation": "Dynamic",
+                "private_ip_address_version": "IPv4",
+                "public_ip_address_id": "",
+                "subnet_id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/virtualNetworks/acctvn/subnets/acctsub"
+              }
+            ],
+            "location": "eastus",
+            "mac_address": "",
+            "name": "acctni1",
+            "private_ip_address": "10.0.2.5",
+            "private_ip_addresses": [
+              "10.0.2.5"
+            ],
+            "resource_group_name": "pulkit-azure-rg",
+            "tags": {},
+            "timeouts": null,
+            "virtual_machine_id": ""
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.pulkit-azure",
+            "azurerm_subnet.pulkit-azure",
+            "azurerm_virtual_network.pulkit-azure"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_public_ip",
+      "name": "pulkit-azure",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allocation_method": "Static",
+            "availability_zone": "No-Zone",
+            "domain_name_label": null,
+            "fqdn": null,
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/publicIPAddresses/publicIPForLB",
+            "idle_timeout_in_minutes": 4,
+            "ip_address": "20.115.29.218",
+            "ip_tags": {},
+            "ip_version": "IPv4",
+            "location": "eastus",
+            "name": "publicIPForLB",
+            "public_ip_prefix_id": null,
+            "resource_group_name": "pulkit-azure-rg",
+            "reverse_fqdn": null,
+            "sku": "Basic",
+            "sku_tier": "Regional",
+            "tags": {},
+            "timeouts": null,
+            "zones": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.pulkit-azure"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "pulkit-azure",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg",
+            "location": "eastus",
+            "name": "pulkit-azure-rg",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "pulkit-azure",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefix": "10.0.2.0/24",
+            "address_prefixes": [
+              "10.0.2.0/24"
+            ],
+            "delegation": [],
+            "enforce_private_link_endpoint_network_policies": false,
+            "enforce_private_link_service_network_policies": false,
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/virtualNetworks/acctvn/subnets/acctsub",
+            "name": "acctsub",
+            "resource_group_name": "pulkit-azure-rg",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "timeouts": null,
+            "virtual_network_name": "acctvn"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.pulkit-azure",
+            "azurerm_virtual_network.pulkit-azure"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "pulkit-azure",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_space": [
+              "10.0.0.0/16"
+            ],
+            "bgp_community": "",
+            "ddos_protection_plan": [],
+            "dns_servers": [],
+            "flow_timeout_in_minutes": 0,
+            "guid": "2f08913b-9d9f-4d2f-b841-af201675ee63",
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/virtualNetworks/acctvn",
+            "location": "eastus",
+            "name": "acctvn",
+            "resource_group_name": "pulkit-azure-rg",
+            "subnet": [
+              {
+                "address_prefix": "10.0.2.0/24",
+                "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/virtualNetworks/acctvn/subnets/acctsub",
+                "name": "acctsub",
+                "security_group": ""
+              }
+            ],
+            "tags": {},
+            "timeouts": null,
+            "vm_protection_enabled": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.pulkit-azure"
+          ]
+        }
+      ]
+    }
+  ]
+}

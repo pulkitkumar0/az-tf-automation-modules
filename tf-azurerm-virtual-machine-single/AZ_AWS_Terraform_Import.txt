@@ -1,0 +1,20 @@
+	Successful completion of VM provisioning. (Screenshot)
+	Importing resources in terraform state file (ResourceGroups, VM, NIC, Subnet, NetworkSecurityGroups, Public IPs and Storage (Screenshots)
+	Commands Used to import resources
+	Terraform StateFile after Import
+
+Commands for Import:
+
+1) terraform import azurerm_resource_group.myterraformgroup /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myResourceGroup
+
+2) terraform azurerm_linux_virtual_machine.myterraformvm /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM
+
+3) terraform import azurerm_network_interface.myterraformnic/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myNIC
+
+4) terraform import azurerm_subnet.myterraformgsubnet /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVnet/subnets/mySubnet
+
+5) terraform import azurerm_network_security_group.myterraformnsg /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNetworkSecurityGroup
+
+6) terraform import azurerm_public_ip.myterraformpublicip /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/myPublicIP
+
+7) terraform import azurerm_storage_account.mystorageaccount/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/diag49601473462383f9

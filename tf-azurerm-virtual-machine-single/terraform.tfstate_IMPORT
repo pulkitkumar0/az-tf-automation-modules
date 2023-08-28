@@ -1,0 +1,36 @@
+{
+  "version": 4,
+  "terraform_version": "1.0.11",
+  "serial": 1,
+  "lineage": "5bd5ad03-d55b-0c2b-7f51-1a5b60646cc1",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "myterraformgroup",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myresourcegroup",
+            "location": "eastus",
+            "name": "myResourceGroup",
+            "tags": {
+              "environment": "Terraform Demo"
+            },
+            "timeouts": {
+              "create": null,
+              "delete": null,
+              "read": null,
+              "update": null
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIwIn0="
+        }
+      ]
+    }
+  ]
+}

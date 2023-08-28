@@ -1,0 +1,20 @@
+	Successful completion of VM provisioning. (Screenshot)
+	Importing resources in terraform state file (ResourceGroups, VM, NIC, Subnet, NetworkSecurityGroups, Public IPs and Storage (Screenshots)
+	Commands Used to import resources
+	Terraform StateFile after Import
+
+Commands for Import:
+
+1) terraform import azurerm_linux_virtual_machine.pulkit-azure /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Compute/virtualMachines/acctvm0
+
+2) terraform azurerm_resource_group.pulkit-azure /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg
+
+3) terraform import azurerm_virtual_network.pulkit-azure /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/virtualNetworks/acctvn
+
+4) terraform import azurerm_network_interface.pulkit-azure[1] /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/pulkit-azure-rg/providers/Microsoft.Network/networkInterfaces/acctni1
+
+5) terraform import azurerm_managed_disk.pulkit-azure /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/PULKIT-AZURE-RG/providers/Microsoft.Compute/disks/acctvm0_OsDisk_1_7efe3991378b4d0396082b155de7c16d
+
+6) terraform import azurerm_public_ip.myterraformpublicip /subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/myPublicIP
+
+7) terraform import azurerm_storage_account.mystorageaccount/subscriptions/9a37ba30-a6bf-4bf9-b71e-cbccf861839e/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/diag49601473462383f9
